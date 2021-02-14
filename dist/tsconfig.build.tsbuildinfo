@@ -1536,9 +1536,14 @@
         "signature": "26983b32efe77f44e3768d4c95f4d803cace7753f891a879494dd0a63af0e627",
         "affectsGlobalScope": false
       },
+      "../src/products/products.repository.ts": {
+        "version": "70e04e35ad5512320db7d15c24cd406c3edbfab8e48fa091981ecc62782df2d7",
+        "signature": "2033bab6cc598456105b2e3b669d9fe268533ea985f5dd977d921dcf65b41695",
+        "affectsGlobalScope": false
+      },
       "../src/products/products.service.ts": {
-        "version": "9d550fbe889caabb33f6fe9861e37926ebe4d50f2829a0cf6d48651b83196d68",
-        "signature": "9736923cf14ceffe0f0cf15fe367db8bf6926942b32de90ebb700d56329d528d",
+        "version": "ce44366a353be000d30a12ffc5a3b25709c20de639841af38a9ee41a6fdbfca3",
+        "signature": "e5dbf21e78c95e9677eab91f2de86b68e8a393f20ad2232b46e810ab2408f72d",
         "affectsGlobalScope": false
       },
       "../src/products/products.controller.ts": {
@@ -1549,11 +1554,6 @@
       "../src/products/schemas/products.ts": {
         "version": "f6046ef0f6ef00cc9a2dab2e859e7dd012adb6f0b6fac12e8f8694f3cec4db67",
         "signature": "787abe1eab3394c1623ba8203bc5753d4db4542e622f2482c556b51508f1f3d7",
-        "affectsGlobalScope": false
-      },
-      "../src/products/products.repository.ts": {
-        "version": "70e04e35ad5512320db7d15c24cd406c3edbfab8e48fa091981ecc62782df2d7",
-        "signature": "2033bab6cc598456105b2e3b669d9fe268533ea985f5dd977d921dcf65b41695",
         "affectsGlobalScope": false
       },
       "../src/products/products.module.ts": {
@@ -3584,7 +3584,8 @@
       ],
       "../src/products/products.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/products/interfaces/product.interface.ts"
+        "../src/products/interfaces/product.interface.ts",
+        "../src/products/products.repository.ts"
       ],
       "../src/products/schemas/products.ts": [
         "../node_modules/@nestjs/mongoose/index.d.ts"
@@ -4992,6 +4993,9 @@
       "../src/products/products.repository.ts": [
         "../node_modules/mongoose/index.d.ts",
         "../src/products/interfaces/product.interface.ts"
+      ],
+      "../src/products/products.service.ts": [
+        "../src/products/products.repository.ts"
       ],
       "../src/products/schemas/products.ts": [
         "../node_modules/mongoose/index.d.ts"

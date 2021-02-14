@@ -1,5 +1,7 @@
+import { ProductRepository } from './products.repository';
 export declare class ProductsService {
-    constructor();
+    private productDB;
+    constructor(productDB: ProductRepository);
     private readonly cats;
     findAll(): string[];
     createProduct(): any;

@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { IProduct } from './interfaces/product.interface';
-//import { ProductRepository } from './products.repository';
+import { ProductRepository } from './products.repository';
 
 @Injectable()
 export class ProductsService {
     constructor(
-       // private productDB: ProductRepository,       
+       private productDB: ProductRepository,       
       ) {}
     private readonly cats: string[] = ["one","too"];
 
@@ -13,8 +13,7 @@ export class ProductsService {
         return this.cats;
       }
 
-    createProduct(): any{
-        return "AAAAA";
-        //return this.productDB.createProduct();
+    createProduct(): any{        
+        return this.productDB.createProduct();
     }
 }
