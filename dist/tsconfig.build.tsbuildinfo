@@ -1536,19 +1536,14 @@
         "signature": "26983b32efe77f44e3768d4c95f4d803cace7753f891a879494dd0a63af0e627",
         "affectsGlobalScope": false
       },
-      "../src/products/products.repository.ts": {
-        "version": "70e04e35ad5512320db7d15c24cd406c3edbfab8e48fa091981ecc62782df2d7",
-        "signature": "2033bab6cc598456105b2e3b669d9fe268533ea985f5dd977d921dcf65b41695",
-        "affectsGlobalScope": false
-      },
       "../src/products/products.service.ts": {
-        "version": "3fc9488c8a1387020e0b15598a6d795f9d9d32218564458c9aeea347c2ffa280",
-        "signature": "45150829444d179f5315dd92d8f3a074014f2860ece2cf8fb8b2e190b27cc21c",
+        "version": "9d550fbe889caabb33f6fe9861e37926ebe4d50f2829a0cf6d48651b83196d68",
+        "signature": "9736923cf14ceffe0f0cf15fe367db8bf6926942b32de90ebb700d56329d528d",
         "affectsGlobalScope": false
       },
       "../src/products/products.controller.ts": {
-        "version": "7f84b2978a2a909b658f01d41bbc255bea884cc251b175b188c3a719ee7ff3bf",
-        "signature": "1159fb4c2ee25ba4b9a709d40afac7f098b5980f454d567407a92a13d222ab09",
+        "version": "64c700605b7ce581f1583b62d1223a19803a571a062ebf299680ce613ad54190",
+        "signature": "7b98dee91e974c0ba0b325d6d12eda6531d8e5dc1e9892091f708d30c7ebb956",
         "affectsGlobalScope": false
       },
       "../src/products/schemas/products.ts": {
@@ -1556,13 +1551,18 @@
         "signature": "787abe1eab3394c1623ba8203bc5753d4db4542e622f2482c556b51508f1f3d7",
         "affectsGlobalScope": false
       },
+      "../src/products/products.repository.ts": {
+        "version": "70e04e35ad5512320db7d15c24cd406c3edbfab8e48fa091981ecc62782df2d7",
+        "signature": "2033bab6cc598456105b2e3b669d9fe268533ea985f5dd977d921dcf65b41695",
+        "affectsGlobalScope": false
+      },
       "../src/products/products.module.ts": {
-        "version": "dee87e34d67b03a19708f76e761d9a6e775e140b5ae46e8a1c208f5fca8e1f86",
+        "version": "6f6d950f5aa484ba18e5654434005964bc2c62a55e1e5116697f69bd0115f2ac",
         "signature": "8857a2a959eb0ee870d0adb812e0d41a0e12796ec0c1d85f8416e82bcf51ca03",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "b10326d002cf5b5246854398bf37ec53c1c9cdbcff77fdd2f8dd7ac5484d2459",
+        "version": "38a607262dd1924283a36372510afc0f358acd8dc827f53dec391231d3528be5",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -3483,8 +3483,7 @@
       ],
       "../src/products/products.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/products/interfaces/product.interface.ts",
-        "../src/products/products.repository.ts"
+        "../src/products/interfaces/product.interface.ts"
       ],
       "../src/products/schemas/products.ts": [
         "../node_modules/@nestjs/mongoose/index.d.ts"
@@ -4852,16 +4851,11 @@
         "../node_modules/mongoose/index.d.ts"
       ],
       "../src/products/products.controller.ts": [
-        "../src/products/interfaces/product.interface.ts",
         "../src/products/products.service.ts"
       ],
       "../src/products/products.repository.ts": [
         "../node_modules/mongoose/index.d.ts",
         "../src/products/interfaces/product.interface.ts"
-      ],
-      "../src/products/products.service.ts": [
-        "../src/products/interfaces/product.interface.ts",
-        "../src/products/products.repository.ts"
       ],
       "../src/products/schemas/products.ts": [
         "../node_modules/mongoose/index.d.ts"

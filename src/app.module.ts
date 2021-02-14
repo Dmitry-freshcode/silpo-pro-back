@@ -6,13 +6,14 @@ import { ProductsModule } from './products/products.module';
 
 @Module({ 
   imports: [ProductsModule,
-    MongooseModule.forRoot(
-    'mongodb://localhost/silpoPro',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-  })],
+  //   MongooseModule.forRoot(
+  //   'mongodb://localhost/silpoPro',
+  //   {
+  //     useNewUrlParser: true,
+  //     useUnifiedTopology: true,
+  //     useCreateIndex: true,
+  // })
+],
   controllers: [AppController],
   providers: [AppService],
 })

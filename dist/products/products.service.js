@@ -11,22 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductsService = void 0;
 const common_1 = require("@nestjs/common");
-const products_repository_1 = require("./products.repository");
 let ProductsService = class ProductsService {
-    constructor(productDB) {
-        this.productDB = productDB;
+    constructor() {
         this.cats = ["one", "too"];
     }
     findAll() {
         return this.cats;
     }
     createProduct() {
-        return this.productDB.createProduct();
+        return "AAAAA";
     }
 };
 ProductsService = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [products_repository_1.ProductRepository])
+    __metadata("design:paramtypes", [])
 ], ProductsService);
 exports.ProductsService = ProductsService;
 //# sourceMappingURL=products.service.js.map

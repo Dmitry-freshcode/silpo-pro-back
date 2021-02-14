@@ -12,7 +12,7 @@ export class ProductsController {
   }
 
   @Post()
-  async createProduct(): Promise<IProduct> {
+  async createProduct(): Promise<any> {
     return await this.productService.createProduct();
   }
 }
