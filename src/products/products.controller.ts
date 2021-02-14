@@ -8,6 +8,8 @@ export class ProductsController {
 
   @Get()
   findAll(): string[] {
+    const ENV = process.env.NODE_ENV;
+    console.log("ENV",ENV)
     return this.productService.findAll();
   }
 

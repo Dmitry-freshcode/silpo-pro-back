@@ -17,6 +17,8 @@ let ProductsController = class ProductsController {
         this.productService = productService;
     }
     findAll() {
+        const ENV = process.env.NODE_ENV;
+        console.log("ENV", ENV);
         return this.productService.findAll();
     }
     async createProduct() {

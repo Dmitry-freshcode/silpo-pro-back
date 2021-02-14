@@ -6,7 +6,7 @@ import { ProductsModule } from './products/products.module';
 import { ConfigModule } from '@nestjs/config';
 
 const ENV = process.env.NODE_ENV;
-
+console.log(ENV)
 @Module({ 
   imports: [ProductsModule,
     ConfigModule.forRoot({envFilePath: !ENV ? '.env' : `.env.${ENV}`,isGlobal: true}),

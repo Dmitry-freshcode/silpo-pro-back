@@ -1182,7 +1182,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.controller.ts": {
-        "version": "260f889b9e2b69f77be1155348eb345166aec664b3efff6720053c6844a41f28",
+        "version": "16d3d5695f5717ee686577e58dbc79f883e87e95526387972f4e224848a6b617",
         "signature": "ef022c91ea9e75ab4082f2e881f9c4db7b346be2da706e876b253bebce5e6140",
         "affectsGlobalScope": false
       },
@@ -1542,7 +1542,7 @@
         "affectsGlobalScope": false
       },
       "../src/products/products.controller.ts": {
-        "version": "64c700605b7ce581f1583b62d1223a19803a571a062ebf299680ce613ad54190",
+        "version": "9f20ffcfd26baea45f03986f31d386e17be05c78bf06d5d440f06c2e54ba7e3a",
         "signature": "7b98dee91e974c0ba0b325d6d12eda6531d8e5dc1e9892091f708d30c7ebb956",
         "affectsGlobalScope": false
       },
@@ -1561,8 +1561,73 @@
         "signature": "8857a2a959eb0ee870d0adb812e0d41a0e12796ec0c1d85f8416e82bcf51ca03",
         "affectsGlobalScope": false
       },
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": {
+        "version": "c216ce81e0306d4d666bf06375f5c2693e7c6b2bc920d1939d956ab01656f744",
+        "signature": "c216ce81e0306d4d666bf06375f5c2693e7c6b2bc920d1939d956ab01656f744",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": {
+        "version": "024a824b366266620afacf0471dd2c93cc6451206c28a3e700879639ad1be523",
+        "signature": "024a824b366266620afacf0471dd2c93cc6451206c28a3e700879639ad1be523",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": {
+        "version": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a",
+        "signature": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": {
+        "version": "6731c20a2276ec2eadc75b4a5cd108a56850a686a540c229c25a3bcd00c3fc57",
+        "signature": "6731c20a2276ec2eadc75b4a5cd108a56850a686a540c229c25a3bcd00c3fc57",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/types/config.type.d.ts": {
+        "version": "839d15098cc51d756b67acda281788779645cbf8e95571897951afb52ea6535a",
+        "signature": "839d15098cc51d756b67acda281788779645cbf8e95571897951afb52ea6535a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/types/no-infer.type.d.ts": {
+        "version": "443e3123c41da4e34ba5bd439b892f01c8af842692bb943a1c5f5dccd4d3c764",
+        "signature": "443e3123c41da4e34ba5bd439b892f01c8af842692bb943a1c5f5dccd4d3c764",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/types/index.d.ts": {
+        "version": "d83ad6de2cfa93597d4dcf9877b77864d8dfefe141b0a733b1549051b8ca4455",
+        "signature": "d83ad6de2cfa93597d4dcf9877b77864d8dfefe141b0a733b1549051b8ca4455",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": {
+        "version": "89b1e909bcd18add74b777cc0ccc5b92e66224beb09d5b33c27fab39a78141ab",
+        "signature": "89b1e909bcd18add74b777cc0ccc5b92e66224beb09d5b33c27fab39a78141ab",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": {
+        "version": "1d2254ab5fdfd1f346a6e8d03ec698954dd330fdafc2942b77366a052571eab7",
+        "signature": "1d2254ab5fdfd1f346a6e8d03ec698954dd330fdafc2942b77366a052571eab7",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/utils/get-config-token.util.d.ts": {
+        "version": "aadc9a99a877b842474c622500d983eb1927f6ca27374f1b94e561bef54e5997",
+        "signature": "aadc9a99a877b842474c622500d983eb1927f6ca27374f1b94e561bef54e5997",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": {
+        "version": "f9e034b1ae29825c00532e08ea852b0c72885c343ee48d2975db0a6481218ab3",
+        "signature": "f9e034b1ae29825c00532e08ea852b0c72885c343ee48d2975db0a6481218ab3",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/dist/index.d.ts": {
+        "version": "2d83f7d8b38d5941370e769e98492fa28c1112cbc976958522bc92a11b8234aa",
+        "signature": "2d83f7d8b38d5941370e769e98492fa28c1112cbc976958522bc92a11b8234aa",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/config/index.d.ts": {
+        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "38a607262dd1924283a36372510afc0f358acd8dc827f53dec391231d3528be5",
+        "version": "1f3cc9694d8612beb421c33b390f1922905393720ebbba590cec99d52fbee748",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -2550,6 +2615,41 @@
       "../node_modules/@nestjs/common/utils/index.d.ts": [
         "../node_modules/@nestjs/common/utils/forward-ref.util.d.ts"
       ],
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
+        "../node_modules/@nestjs/config/dist/types/index.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/config.module.d.ts",
+        "../node_modules/@nestjs/config/dist/config.service.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/config/dist/types/index.d.ts",
+        "../node_modules/@nestjs/config/dist/utils/index.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
+        "../node_modules/@nestjs/config/dist/types/no-infer.type.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/utils/get-config-token.util.d.ts",
+        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts"
+      ],
+      "../node_modules/@nestjs/config/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/index.d.ts"
+      ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/common/interfaces/external/cors-options.interface.d.ts",
@@ -3447,6 +3547,7 @@
       ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/@nestjs/mongoose/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
@@ -3952,6 +4053,41 @@
       ],
       "../node_modules/@nestjs/common/utils/index.d.ts": [
         "../node_modules/@nestjs/common/utils/forward-ref.util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
+        "../node_modules/@nestjs/config/dist/types/index.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/config.module.d.ts",
+        "../node_modules/@nestjs/config/dist/config.service.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/config/dist/types/index.d.ts",
+        "../node_modules/@nestjs/config/dist/utils/index.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
+        "../node_modules/@nestjs/config/dist/types/no-infer.type.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/utils/get-config-token.util.d.ts",
+        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts"
+      ],
+      "../node_modules/@nestjs/config/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/index.d.ts"
       ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -5002,6 +5138,19 @@
       "../node_modules/@nestjs/common/utils/forward-ref.util.d.ts",
       "../node_modules/@nestjs/common/utils/http-error-by-code.util.d.ts",
       "../node_modules/@nestjs/common/utils/index.d.ts",
+      "../node_modules/@nestjs/config/dist/config.module.d.ts",
+      "../node_modules/@nestjs/config/dist/config.service.d.ts",
+      "../node_modules/@nestjs/config/dist/index.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+      "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
+      "../node_modules/@nestjs/config/dist/types/index.d.ts",
+      "../node_modules/@nestjs/config/dist/types/no-infer.type.d.ts",
+      "../node_modules/@nestjs/config/dist/utils/get-config-token.util.d.ts",
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts",
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
+      "../node_modules/@nestjs/config/index.d.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/application-config.d.ts",
