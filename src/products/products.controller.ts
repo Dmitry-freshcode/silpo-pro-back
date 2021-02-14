@@ -8,8 +8,7 @@ export class ProductsController {
 
   @Get()
   findAll(): string[] {
-    const ENV = process.env.NODE_ENV;
-    console.log("ENV",ENV)
+      console.log(process.env.MONGODB_CONNECTION)
     return this.productService.findAll();
   }
 

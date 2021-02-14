@@ -7,8 +7,6 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    const ENV = process.env.NODE_ENV;
-console.log("ENV",ENV)
     return this.appService.getHello();
   }
 }

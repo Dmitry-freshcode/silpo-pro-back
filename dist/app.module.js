@@ -8,18 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
+const mongoose_1 = require("@nestjs/mongoose");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const products_module_1 = require("./products/products.module");
 const config_1 = require("@nestjs/config");
 const ENV = process.env.NODE_ENV;
-console.log(ENV);
+const envPath = !ENV ? '.env' : `.env.${ENV}`;
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [products_module_1.ProductsModule,
-            config_1.ConfigModule.forRoot({ envFilePath: !ENV ? '.env' : `.env.${ENV}`, isGlobal: true }),
+            config_1.ConfigModule.forRoot({ envFilePath: envPath, isGlobal: true }),
+            mongoose_1.MongooseModule.forRoot(process.env.MONGODB_CONNECTION, {
+                useNewUrlParser: true,
+                useUnifiedTopology: true,
+                useCreateIndex: true,
+            })
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

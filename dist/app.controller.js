@@ -17,8 +17,6 @@ let AppController = class AppController {
         this.appService = appService;
     }
     getHello() {
-        const ENV = process.env.NODE_ENV;
-        console.log("ENV", ENV);
         return this.appService.getHello();
     }
 };
