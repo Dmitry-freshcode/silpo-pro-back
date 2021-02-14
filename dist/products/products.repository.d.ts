@@ -4,4 +4,6 @@ export declare class ProductRepository {
     private productModel;
     constructor(productModel: Model<IProduct>);
     createProduct(User?: IProduct | any): Promise<IProduct>;
+    createProductMany(products?: IProduct[] | any): Promise<any>;
+    deleteAll(): Promise<any>;
 }

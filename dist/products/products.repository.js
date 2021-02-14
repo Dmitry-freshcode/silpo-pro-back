@@ -24,6 +24,12 @@ let ProductRepository = class ProductRepository {
         const product = new this.productModel(User);
         return await product.save();
     }
+    async createProductMany(products = {}) {
+        return await this.productModel.insertMany(products);
+    }
+    async deleteAll() {
+        return await this.productModel.deleteMany({});
+    }
 };
 ProductRepository = __decorate([
     common_1.Injectable(),

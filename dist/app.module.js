@@ -25,7 +25,8 @@ AppModule = __decorate([
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
                 useCreateIndex: true,
-            })
+            }),
+            common_1.HttpModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

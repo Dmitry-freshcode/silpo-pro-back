@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { HttpModule, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -17,7 +17,8 @@ const envPath = !ENV ? '.env' : `.env.${ENV}`
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
-  })
+  }),
+  HttpModule
 ],
   controllers: [AppController],
   providers: [AppService],

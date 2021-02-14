@@ -14,4 +14,12 @@ export class ProductRepository {
     const product = new this.productModel(User);
     return await product.save();
   }
+
+  async createProductMany(products: IProduct[] | any = {}): Promise<any> {       
+    return await this.productModel.insertMany(products);
+  }
+
+  async deleteAll() : Promise<any>{
+      return  await this.productModel.deleteMany({});
+  }
 }
