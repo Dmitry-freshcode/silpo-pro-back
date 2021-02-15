@@ -30,9 +30,9 @@ export declare class Products {
     image: string;
     available: boolean;
     imageUrl: string;
-    price: string;
-    oldPrice: string;
-    discount: string;
+    price: number;
+    oldPrice: number;
+    discount: number;
     points: string;
     pointsText: string;
     loyaltyTerms: string;

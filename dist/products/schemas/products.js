@@ -123,15 +123,15 @@ __decorate([
 ], Products.prototype, "imageUrl", void 0);
 __decorate([
     mongoose_1.Prop(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], Products.prototype, "price", void 0);
 __decorate([
     mongoose_1.Prop(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], Products.prototype, "oldPrice", void 0);
 __decorate([
     mongoose_1.Prop(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], Products.prototype, "discount", void 0);
 __decorate([
     mongoose_1.Prop(),

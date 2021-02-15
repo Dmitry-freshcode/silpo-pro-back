@@ -25,6 +25,7 @@ let ProductRepository = class ProductRepository {
         return await product.save();
     }
     async createProductMany(products = {}) {
+        await this.deleteAll();
         return await this.productModel.insertMany(products);
     }
     async deleteAll() {

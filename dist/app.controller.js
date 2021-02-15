@@ -20,12 +20,10 @@ let AppController = class AppController {
         return this.appService.getHello();
     }
     async getSilpo() {
-        const test = await this.appService.getProductsSilpo();
-        return test;
+        return;
     }
     async getGoogle() {
-        const test = await this.appService.getProductsGoogle();
-        return test;
+        return;
     }
 };
 __decorate([

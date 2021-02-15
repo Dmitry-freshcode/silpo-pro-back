@@ -1,4 +1,11 @@
-const silpo ={
+import { IProduct } from "src/products/interfaces/product.interface";
+import { HttpService, Injectable } from '@nestjs/common';
+
+@Injectable()
+export class SilpoService {
+  constructor(private httpService: HttpService,){} 
+
+  private readonly query ={
     query: `query offers($categoryId: ID, $filialIds: [ID], $coordinates: Coordinates, $pagingInfo: InputBatch!, $pageSlug: String!, $random: Boolean!, $onlyActive: Boolean) {
         offersSplited(categoryId: $categoryId, filialIds: $filialIds, coordinates: $coordinates, pagingInfo: $pagingInfo, pageSlug: $pageSlug, random: $random, onlyActive: $onlyActive) {    
           products {
@@ -86,4 +93,29 @@ const silpo ={
       }
 }
 
-export default silpo;
+
+  async getSilpoProducts (): Promise<IProduct[]>{
+    try{
+      const response = await this.httpService.post(
+        process.env.SILPO_URL,{
+        query: this.query.query,
+        variables: this.query.variables,      
+      }).toPromise();
+      const products = response.data.data.offersSplited.products.items;
+
+      const mapProducts = products.map(item=>{
+        item.price = parseFloat(item.price);
+        item.oldPrice = parseFloat(item.oldPrice);
+        item.discount = Number(((1-item.price/item.oldPrice)*100).toFixed(2));
+        return item;
+      })
+           
+      return mapProducts;
+    } catch (e) {
+      console.log(e);
+      throw e;
+    }
+  }
+}
+
+

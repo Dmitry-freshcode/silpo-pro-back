@@ -15,7 +15,8 @@ export class ProductRepository {
     return await product.save();
   }
 
-  async createProductMany(products: IProduct[] | any = {}): Promise<any> {       
+  async createProductMany(products: IProduct[] | any = {}): Promise<any> { 
+    await this.deleteAll();      
     return await this.productModel.insertMany(products);
   }
 

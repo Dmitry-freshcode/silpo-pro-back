@@ -8,34 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var TaskStartup_1;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppService = void 0;
+exports.TaskStartup = void 0;
 const common_1 = require("@nestjs/common");
-const products_repository_1 = require("./products/products.repository");
-let AppService = class AppService {
-    constructor(productRepository) {
-        this.productRepository = productRepository;
+const products_repository_1 = require("../products/products.repository");
+const silpo_query_1 = require("./silpo_query");
+let TaskStartup = TaskStartup_1 = class TaskStartup {
+    constructor(silpoService, productsRepository) {
+        this.silpoService = silpoService;
+        this.productsRepository = productsRepository;
+        this.logger = new common_1.Logger(TaskStartup_1.name);
     }
-    getHello() {
-        return 'Hello World!';
-    }
-    getProductsGoogle() {
-    }
-    async addProductsDb(products) {
-        try {
-            await this.productRepository.deleteAll();
-            const result = await this.productRepository.createProductMany(products);
-            return "products created";
-        }
-        catch (e) {
-            console.log(e);
-            throw e;
-        }
+    async onApplicationBootstrap() {
+        const products = await this.silpoService.getSilpoProducts();
+        await this.productsRepository.createProductMany(products);
+        this.logger.debug('DB refresh');
     }
 };
-AppService = __decorate([
+TaskStartup = TaskStartup_1 = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [products_repository_1.ProductRepository])
-], AppService);
-exports.AppService = AppService;
-//# sourceMappingURL=app.service.js.map
+    __metadata("design:paramtypes", [silpo_query_1.SilpoService,
+        products_repository_1.ProductRepository])
+], TaskStartup);
+exports.TaskStartup = TaskStartup;
+//# sourceMappingURL=taskStartup.js.map

@@ -1,4 +1,4 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory  } from '@nestjs/mongoose';
 
 @Schema()
 class labelIcon{
@@ -81,13 +81,13 @@ export class Products {
   imageUrl: string;
 
   @Prop()
-  price: string;
+  price: number;
 
   @Prop()
-  oldPrice: string;
+  oldPrice: number;
 
   @Prop()
-  discount: string;
+  discount: number;
 
   @Prop()
   points: string;

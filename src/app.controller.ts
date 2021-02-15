@@ -12,16 +12,12 @@ export class AppController {
 
   @Get('/silpo')
   async getSilpo():  Promise<any> {
-    const test = await this.appService.getProductsSilpo();  
-    //console.log(test.data.data.offersSplited.products)  
-    return test;
+    return ;
   }
 
 
   @Get('/google')
-  async getGoogle(): Promise<any> {
-    const test = await this.appService.getProductsGoogle(); 
-  
-    return test;
+  async getGoogle(): Promise<any> {     
+    return ;
   }
 }

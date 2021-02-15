@@ -1,16 +1,8 @@
-declare const silpo: {
-    query: string;
-    variables: {
-        categoryId: any;
-        filialIds: any;
-        coordinates: any;
-        pagingInfo: {
-            offset: number;
-            limit: number;
-        };
-        onlyActive: boolean;
-        pageSlug: string;
-        random: boolean;
-    };
-};
-export default silpo;
+import { IProduct } from "src/products/interfaces/product.interface";
+import { HttpService } from '@nestjs/common';
+export declare class SilpoService {
+    private httpService;
+    constructor(httpService: HttpService);
+    private readonly query;
+    getSilpoProducts(): Promise<IProduct[]>;
+}
