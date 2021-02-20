@@ -11,7 +11,7 @@ export interface IProduct extends Document {
     readonly imageUrl: string;
     readonly price: number;
     readonly oldPrice: number;
-    readonly discount: string;
+    readonly discount: number;
     readonly points: string;
     readonly pointsText: string;
     readonly loyaltyTerms: string;

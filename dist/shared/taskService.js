@@ -13,18 +13,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TasksService = void 0;
 const common_1 = require("@nestjs/common");
 const schedule_1 = require("@nestjs/schedule");
-const products_repository_1 = require("../products/products.repository");
-const silpo_query_1 = require("./silpo_query");
+const products_service_1 = require("../products/products.service");
 let TasksService = TasksService_1 = class TasksService {
-    constructor(silpoService, productsRepository) {
-        this.silpoService = silpoService;
-        this.productsRepository = productsRepository;
+    constructor(productService) {
+        this.productService = productService;
         this.logger = new common_1.Logger(TasksService_1.name);
     }
     async handleCron() {
-        const products = await this.silpoService.getSilpoProducts();
-        await this.productsRepository.createProductMany(products);
-        this.logger.debug('DB refresh');
+        const result = await this.productService.refreshProductBySilpo();
+        this.logger.debug(`Cron DB refresh, result: ${result}`);
     }
 };
 __decorate([
@@ -35,8 +32,7 @@ __decorate([
 ], TasksService.prototype, "handleCron", null);
 TasksService = TasksService_1 = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [silpo_query_1.SilpoService,
-        products_repository_1.ProductRepository])
+    __metadata("design:paramtypes", [products_service_1.ProductsService])
 ], TasksService);
 exports.TasksService = TasksService;
 //# sourceMappingURL=taskService.js.map

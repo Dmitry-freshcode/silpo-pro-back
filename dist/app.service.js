@@ -17,20 +17,7 @@ let AppService = class AppService {
         this.productRepository = productRepository;
     }
     getHello() {
-        return 'Hello World!';
-    }
-    getProductsGoogle() {
-    }
-    async addProductsDb(products) {
-        try {
-            await this.productRepository.deleteAll();
-            const result = await this.productRepository.createProductMany(products);
-            return "products created";
-        }
-        catch (e) {
-            console.log(e);
-            throw e;
-        }
+        return 'Welcome, it is SilpoPro server';
     }
 };
 AppService = __decorate([

@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { ProductRepository } from './products/products.repository';
-import { IProduct } from './products/interfaces/product.interface';
 
 @Injectable()
 export class AppService {
@@ -9,22 +8,7 @@ export class AppService {
     ) {}
 
   getHello(): string {
-    return 'Hello World!';
+    return 'Welcome, it is SilpoPro server';
   }
 
-  getProductsGoogle(): any {
-   
-  }
-
-
-  async addProductsDb (products:IProduct[]):Promise<any>{
-   try{
-     await this.productRepository.deleteAll();
-    const result = await this.productRepository.createProductMany(products);
-    return "products created"
-   } catch (e) {
-     console.log(e);
-     throw e;
-   } 
-  }
 }

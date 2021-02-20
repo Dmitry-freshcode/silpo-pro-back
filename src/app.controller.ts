@@ -8,16 +8,5 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
-  }
-
-  @Get('/silpo')
-  async getSilpo():  Promise<any> {
-    return ;
-  }
-
-
-  @Get('/google')
-  async getGoogle(): Promise<any> {     
-    return ;
-  }
+  }  
 }

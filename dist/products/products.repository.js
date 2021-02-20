@@ -31,6 +31,23 @@ let ProductRepository = class ProductRepository {
     async deleteAll() {
         return await this.productModel.deleteMany({});
     }
+    async getAllProducts(sort, field, limit, skip) {
+        sort = sort || 1;
+        field = field || "slug";
+        limit = limit || 9999;
+        skip = skip || 0;
+        return await this.productModel.aggregate([
+            {
+                '$sort': {
+                    [field]: sort
+                }
+            }, {
+                '$skip': skip
+            }, {
+                '$limit': limit
+            }
+        ]);
+    }
 };
 ProductRepository = __decorate([
     common_1.Injectable(),

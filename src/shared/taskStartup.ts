@@ -1,19 +1,16 @@
 import { Injectable,Logger,OnApplicationBootstrap } from '@nestjs/common';
-import { ProductRepository } from 'src/products/products.repository';
-import { SilpoService } from './silpo_query';
+import { ProductsService } from 'src/products/products.service';
 
 @Injectable()
 export class TaskStartup implements OnApplicationBootstrap {
     constructor(
-        readonly silpoService : SilpoService,
-        readonly productsRepository: ProductRepository,
+     readonly productService: ProductsService,
     ) {}
     private readonly logger = new Logger(TaskStartup.name);
     
     async onApplicationBootstrap() {   
-        const products = await this.silpoService.getSilpoProducts();  
-        await this.productsRepository.createProductMany(products);
-        this.logger.debug('DB refresh');
+        const result = await this.productService.refreshProductBySilpo();
+        this.logger.debug(`Startup DB refresh, result: ${result}`);
     }
   }
   

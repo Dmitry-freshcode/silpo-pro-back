@@ -12,24 +12,20 @@ var TaskStartup_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskStartup = void 0;
 const common_1 = require("@nestjs/common");
-const products_repository_1 = require("../products/products.repository");
-const silpo_query_1 = require("./silpo_query");
+const products_service_1 = require("../products/products.service");
 let TaskStartup = TaskStartup_1 = class TaskStartup {
-    constructor(silpoService, productsRepository) {
-        this.silpoService = silpoService;
-        this.productsRepository = productsRepository;
+    constructor(productService) {
+        this.productService = productService;
         this.logger = new common_1.Logger(TaskStartup_1.name);
     }
     async onApplicationBootstrap() {
-        const products = await this.silpoService.getSilpoProducts();
-        await this.productsRepository.createProductMany(products);
-        this.logger.debug('DB refresh');
+        const result = await this.productService.refreshProductBySilpo();
+        this.logger.debug(`Startup DB refresh, result: ${result}`);
     }
 };
 TaskStartup = TaskStartup_1 = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [silpo_query_1.SilpoService,
-        products_repository_1.ProductRepository])
+    __metadata("design:paramtypes", [products_service_1.ProductsService])
 ], TaskStartup);
 exports.TaskStartup = TaskStartup;
 //# sourceMappingURL=taskStartup.js.map

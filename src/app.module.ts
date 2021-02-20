@@ -6,8 +6,8 @@ import { ProductsModule } from './products/products.module';
 import { ConfigModule } from '@nestjs/config';
 import { ScheduleModule } from '@nestjs/schedule';
 import { TasksService } from './shared/taskService';
-import { SilpoService } from './shared/silpo_query';
 import { TaskStartup } from './shared/taskStartup';
+import { HttpService } from '@nestjs/common';
 
 const ENV = process.env.NODE_ENV;
 const envPath = !ENV ? '.env' : `.env.${ENV}`;
@@ -23,14 +23,12 @@ const envPath = !ENV ? '.env' : `.env.${ENV}`;
       useUnifiedTopology: true,
       useCreateIndex: true,
   }),
-  HttpModule
 ],
   controllers: [AppController],
   providers: [
-    AppService, 
-    SilpoService,
+    AppService,   
     TasksService, 
-    TaskStartup,
+    TaskStartup,   
   ],
 })
 export class AppModule {}

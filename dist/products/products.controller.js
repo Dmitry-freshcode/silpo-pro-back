@@ -8,6 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductsController = void 0;
 const common_1 = require("@nestjs/common");
@@ -16,26 +19,21 @@ let ProductsController = class ProductsController {
     constructor(productService) {
         this.productService = productService;
     }
-    findAll() {
-        console.log(process.env.MONGODB_CONNECTION);
-        return this.productService.findAll();
-    }
-    async createProduct() {
-        return await this.productService.createProduct();
+    async getAll(request) {
+        const sort = Number(request.query.sort);
+        const field = request.query.field;
+        const limit = Number(request.query.limit);
+        const skip = Number(request.query.skip);
+        return await this.productService.getProducts(sort, field, limit, skip);
     }
 };
 __decorate([
     common_1.Get(),
+    __param(0, common_1.Req()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Array)
-], ProductsController.prototype, "findAll", null);
-__decorate([
-    common_1.Post(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], ProductsController.prototype, "createProduct", null);
+], ProductsController.prototype, "getAll", null);
 ProductsController = __decorate([
     common_1.Controller('products'),
     __metadata("design:paramtypes", [products_service_1.ProductsService])

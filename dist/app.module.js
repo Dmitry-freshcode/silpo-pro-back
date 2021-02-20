@@ -15,7 +15,6 @@ const products_module_1 = require("./products/products.module");
 const config_1 = require("@nestjs/config");
 const schedule_1 = require("@nestjs/schedule");
 const taskService_1 = require("./shared/taskService");
-const silpo_query_1 = require("./shared/silpo_query");
 const taskStartup_1 = require("./shared/taskStartup");
 const ENV = process.env.NODE_ENV;
 const envPath = !ENV ? '.env' : `.env.${ENV}`;
@@ -32,12 +31,10 @@ AppModule = __decorate([
                 useUnifiedTopology: true,
                 useCreateIndex: true,
             }),
-            common_1.HttpModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [
             app_service_1.AppService,
-            silpo_query_1.SilpoService,
             taskService_1.TasksService,
             taskStartup_1.TaskStartup,
         ],

@@ -19,12 +19,6 @@ let AppController = class AppController {
     getHello() {
         return this.appService.getHello();
     }
-    async getSilpo() {
-        return;
-    }
-    async getGoogle() {
-        return;
-    }
 };
 __decorate([
     common_1.Get(),
@@ -32,18 +26,6 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
 ], AppController.prototype, "getHello", null);
-__decorate([
-    common_1.Get('/silpo'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], AppController.prototype, "getSilpo", null);
-__decorate([
-    common_1.Get('/google'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], AppController.prototype, "getGoogle", null);
 AppController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [app_service_1.AppService])
