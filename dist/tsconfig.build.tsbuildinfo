@@ -1932,7 +1932,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "a2e3cd9c5ba468749476de9a7e0ab3fb1fa70b63346a43a677d8b6d8e22f6f10",
+        "version": "ac7eac2da5fe6ef767661345b594e5759b5b5289c3e4ebecca9ae92476c2612a",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },

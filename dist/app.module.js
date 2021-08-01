@@ -26,7 +26,7 @@ AppModule = __decorate([
             products_module_1.ProductsModule,
             schedule_1.ScheduleModule.forRoot(),
             config_1.ConfigModule.forRoot({ envFilePath: envPath, isGlobal: true }),
-            mongoose_1.MongooseModule.forRoot(process.env.MONGODB_CONNECTION, {
+            mongoose_1.MongooseModule.forRoot(`mongodb://${process.env.MONGODB_LOGIN}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DB}?authSource=admin`, {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
                 useCreateIndex: true,

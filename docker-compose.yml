@@ -1,0 +1,49 @@
+version: '3.0'
+
+services:
+  main:
+    container_name: back-silpo-container
+    build:
+      context: .
+    env_file:
+      - .env
+    environment:
+      - MONGODB_HOST=$MONGODB_HOST_DOCKER
+      - MONGODB_LOGIN=$MONGODB_LOGIN
+      - MONGODB_PASSWORD=$MONGODB_PASSWORD
+      - MONGODB_DB=$MONGODB_DB
+      - MONGODB_PORT=$MONGODB_PORT
+    volumes:
+      - .:/app
+      - node_modules:/home/node/app/node_modules
+    ports:
+      - 4000:4000
+      - 9229:9229
+    command: npm run start:dev
+    depends_on:
+      - mongo
+    restart: always
+    networks:
+      - app-network
+  mongo:
+    container_name: mongo-silpo
+    image: mangoraft/mongodb-arm
+    env_file:
+      - .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$MONGODB_LOGIN
+      - MONGODB_PASS=$MONGODB_PASSWORD
+    ports:
+      - 27017:27017
+#    volumes:
+#      - dbdata:/data/db
+    restart: always
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+#  dbdata:
+  node_modules:

@@ -7,17 +7,16 @@ import { ConfigModule } from '@nestjs/config';
 import { ScheduleModule } from '@nestjs/schedule';
 import { TasksService } from './shared/taskService';
 import { TaskStartup } from './shared/taskStartup';
-import { HttpService } from '@nestjs/common';
 
 const ENV = process.env.NODE_ENV;
 const envPath = !ENV ? '.env' : `.env.${ENV}`;
-@Module({ 
+@Module({
   imports: [
-    ProductsModule,      
+    ProductsModule,
     ScheduleModule.forRoot(),
     ConfigModule.forRoot({envFilePath: envPath,isGlobal: true}),
     MongooseModule.forRoot(
-      process.env.MONGODB_CONNECTION,
+        `mongodb://${process.env.MONGODB_LOGIN}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DB}?authSource=admin`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -26,9 +25,10 @@ const envPath = !ENV ? '.env' : `.env.${ENV}`;
 ],
   controllers: [AppController],
   providers: [
-    AppService,   
-    TasksService, 
-    TaskStartup,   
+    AppService,
+    TasksService,
+    TaskStartup,
   ],
 })
+
 export class AppModule {}
