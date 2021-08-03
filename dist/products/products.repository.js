@@ -14,45 +14,34 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductRepository = void 0;
 const common_1 = require("@nestjs/common");
-const mongoose_1 = require("@nestjs/mongoose");
-const mongoose_2 = require("mongoose");
+const common_2 = require("@nestjs/common");
 let ProductRepository = class ProductRepository {
     constructor(productModel) {
         this.productModel = productModel;
     }
-    async createProduct(User = {}) {
-        const product = new this.productModel(User);
-        return await product.save();
+    async deleteAll() {
+        return await this.productModel.destroy({
+            where: {},
+            truncate: true
+        });
     }
     async createProductMany(products = {}) {
         await this.deleteAll();
-        return await this.productModel.insertMany(products);
+        return this.productModel.bulkCreate(products);
     }
-    async deleteAll() {
-        return await this.productModel.deleteMany({});
-    }
-    async getAllProducts(sort, field, limit, skip) {
-        sort = sort || 1;
-        field = field || "slug";
-        limit = limit || 9999;
-        skip = skip || 0;
-        return await this.productModel.aggregate([
-            {
-                '$sort': {
-                    [field]: sort
-                }
-            }, {
-                '$skip': skip
-            }, {
-                '$limit': limit
-            }
-        ]);
+    async getAllProducts(sort = 1, field = "slug", limit = 9999, skip = 0) {
+        return this.productModel.findAll({
+            where: {},
+            order: [[field, sort === 1 ? 'ASC' : 'DESC']],
+            limit,
+            offset: skip,
+        });
     }
 };
 ProductRepository = __decorate([
-    common_1.Injectable(),
-    __param(0, mongoose_1.InjectModel('Product')),
-    __metadata("design:paramtypes", [mongoose_2.Model])
+    common_2.Injectable(),
+    __param(0, common_1.Inject('ProductPgSchema')),
+    __metadata("design:paramtypes", [Object])
 ], ProductRepository);
 exports.ProductRepository = ProductRepository;
 //# sourceMappingURL=products.repository.js.map

@@ -1,6 +1,6 @@
-import { IProduct } from './interfaces/product.interface';
 import { ProductRepository } from './products.repository';
 import { HttpService } from '@nestjs/common';
+import { ProductPgSchema } from "./schemas/product_postgres.schema";
 export declare type Product = {
     id: string;
     slug: string;
@@ -44,7 +44,7 @@ export declare class ProductsService {
     private productDB;
     private httpService;
     constructor(productDB: ProductRepository, httpService: HttpService);
-    getProducts(sort: number, field: string, limit: number, skip: number): Promise<IProduct[]>;
+    getProducts(sort: number, field: string, limit: number, skip: number): Promise<ProductPgSchema[]>;
     refreshProductBySilpo(): Promise<string>;
     getSilpoProducts(): Promise<Product[]>;
 }

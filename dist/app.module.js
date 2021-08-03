@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const mongoose_1 = require("@nestjs/mongoose");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const products_module_1 = require("./products/products.module");
@@ -16,6 +15,8 @@ const config_1 = require("@nestjs/config");
 const schedule_1 = require("@nestjs/schedule");
 const taskService_1 = require("./shared/taskService");
 const taskStartup_1 = require("./shared/taskStartup");
+const sequelize_1 = require("@nestjs/sequelize");
+const product_postgres_schema_1 = require("./products/schemas/product_postgres.schema");
 const ENV = process.env.NODE_ENV;
 const envPath = !ENV ? '.env' : `.env.${ENV}`;
 let AppModule = class AppModule {
@@ -26,10 +27,19 @@ AppModule = __decorate([
             products_module_1.ProductsModule,
             schedule_1.ScheduleModule.forRoot(),
             config_1.ConfigModule.forRoot({ envFilePath: envPath, isGlobal: true }),
-            mongoose_1.MongooseModule.forRoot(`mongodb://${process.env.MONGODB_LOGIN}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DB}?authSource=admin`, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-                useCreateIndex: true,
+            sequelize_1.SequelizeModule.forRoot({
+                dialect: 'postgres',
+                host: process.env.DB_HOST,
+                port: Number(process.env.DB_PORT),
+                username: process.env.DB_LOGIN,
+                password: process.env.DB_PASSWORD,
+                database: process.env.DB_DATABASE,
+                define: {
+                    timestamps: true,
+                },
+                autoLoadModels: true,
+                synchronize: true,
+                models: [product_postgres_schema_1.ProductPgSchema],
             }),
         ],
         controllers: [app_controller_1.AppController],

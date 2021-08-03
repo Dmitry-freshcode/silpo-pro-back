@@ -26,7 +26,7 @@ let ProductsService = class ProductsService {
         try {
             const products = await this.getSilpoProducts();
             await this.productDB.deleteAll();
-            const result = await this.productDB.createProductMany(products);
+            await this.productDB.createProductMany(products);
             return "products created";
         }
         catch (e) {

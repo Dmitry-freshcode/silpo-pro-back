@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { ProductGetDto } from './dto/product.dto';
-import { IProduct } from './interfaces/product.interface';
 import { ProductRepository } from './products.repository';
 import query from '../shared/silpo_query'
 import { HttpService } from '@nestjs/common';
+import {ProductPgSchema} from "./schemas/product_postgres.schema";
 
 
 export type Product = {
@@ -54,17 +54,15 @@ export class ProductsService {
       ) {} 
 
 
-    async getProducts(sort:number, field:string,limit:number,skip:number) : Promise<IProduct[]>{
+    async getProducts(sort:number, field:string,limit:number,skip:number) : Promise<ProductPgSchema[]>{
       return await this.productDB.getAllProducts( sort, field,limit,skip )
     }
-
-    
 
     async refreshProductBySilpo():Promise<string>{
       try{
         const products = await this.getSilpoProducts();
         await this.productDB.deleteAll();
-       const result = await this.productDB.createProductMany(products);
+       await this.productDB.createProductMany(products);
        return "products created"
       } catch (e) {
         console.log(e);

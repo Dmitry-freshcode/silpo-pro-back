@@ -1,15 +1,18 @@
 import { HttpModule, Module } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { ProductsController } from './products.controller';
-import { ProductsSchema } from './schemas/products';
-import { MongooseModule } from '@nestjs/mongoose';
 import { ProductRepository } from './products.repository';
+import { ProductPgSchema } from './schemas/product_postgres.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([{name:"Product", schema: ProductsSchema }]),
+  imports: [
   HttpModule
 ],
-  providers: [ProductsService, ProductRepository
+  providers: [ProductsService, ProductRepository,
+    {
+      provide: 'ProductPgSchema',
+      useValue: ProductPgSchema,
+    },
   ],
   controllers: [ProductsController],
   exports:[ProductRepository,ProductsService]

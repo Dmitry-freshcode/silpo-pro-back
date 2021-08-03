@@ -1,6 +1,5 @@
-import { Document } from 'mongoose';
-export interface IProduct extends Document {
-    readonly id: string;
+export interface IProduct {
+    readonly id?: string;
     readonly slug: string;
     readonly lagerId: number;
     readonly type: number;
@@ -16,25 +15,4 @@ export interface IProduct extends Document {
     readonly pointsText: string;
     readonly loyaltyTerms: string;
     readonly skuInfo: string;
-    readonly appearance: {
-        size: string;
-        color: string;
-        __typename: string;
-    };
-    readonly promotion: {
-        id: string;
-        slug: string;
-        labelIcon: {
-            url: string;
-            __typename: string;
-        };
-        labelIconReversed: string;
-        __typename: string;
-    };
-    readonly activePeriod: {
-        start: string;
-        end: string;
-        __typename: string;
-    };
-    readonly __typename: string;
 }

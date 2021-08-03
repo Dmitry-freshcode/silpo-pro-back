@@ -1,10 +1,9 @@
-import { Model } from 'mongoose';
 import { IProduct } from './interfaces/product.interface';
+import { ProductPgSchema } from "./schemas/product_postgres.schema";
 export declare class ProductRepository {
-    private productModel;
-    constructor(productModel: Model<IProduct>);
-    createProduct(User?: IProduct | any): Promise<IProduct>;
-    createProductMany(products?: IProduct[] | any): Promise<any>;
+    private readonly productModel;
+    constructor(productModel: typeof ProductPgSchema);
     deleteAll(): Promise<any>;
-    getAllProducts(sort: any, field: any, limit: any, skip: any): Promise<IProduct[] | []>;
+    createProductMany(products?: IProduct[] | any): Promise<any>;
+    getAllProducts(sort?: number, field?: string, limit?: number, skip?: number): Promise<ProductPgSchema[] | []>;
 }
