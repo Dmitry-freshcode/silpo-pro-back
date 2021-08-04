@@ -19,6 +19,7 @@ const sequelize_1 = require("@nestjs/sequelize");
 const product_postgres_schema_1 = require("./products/schemas/product_postgres.schema");
 const ENV = process.env.NODE_ENV;
 const envPath = !ENV ? '.env' : `.env.${ENV}`;
+console.log(envPath);
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
