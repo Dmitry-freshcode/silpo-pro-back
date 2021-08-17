@@ -7,10 +7,9 @@ export class TaskStartup implements OnApplicationBootstrap {
      readonly productService: ProductsService,
     ) {}
     private readonly logger = new Logger(TaskStartup.name);
-    
-    async onApplicationBootstrap() {   
+
+    async onApplicationBootstrap() {
         const result = await this.productService.refreshProductBySilpo();
         this.logger.debug(`Startup DB refresh, result: ${result}`);
     }
   }
-  

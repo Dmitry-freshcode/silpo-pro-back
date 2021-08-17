@@ -72,18 +72,7 @@ const query ={
       }
       __typename
     }`,
-    variables: {
-      categoryId:null,
-      filialIds:null,
-      coordinates:null,
-      pagingInfo:{
-        offset:0,
-        limit:999999
-      },
-      onlyActive:true,
-      pageSlug:"cina-tizhnya",
-      random:false
-    }
+    variables: '{"categoryId":null,"filialIds":null,"coordinates":null,"pagingInfo":{"offset":0,"limit":999999},"onlyActive":false,"pageSlug":"cina-tyzhnya","random":false}',
 }
 
 export default query;

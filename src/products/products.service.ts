@@ -4,10 +4,10 @@ import { ProductRepository } from './products.repository';
 import query from '../shared/silpo_query'
 import { HttpService } from '@nestjs/common';
 import {ProductPgSchema} from "./schemas/product_postgres.schema";
-
+const FormData = require('form-data');
 
 export type Product = {
-  id: string; 
+  id: string;
   slug: string;
   lagerId: number;
   type: number;
@@ -43,15 +43,15 @@ export type Product = {
       end: string,
       __typename: string
   };
-  __typename: string;  
+  __typename: string;
 }
 
 @Injectable()
 export class ProductsService {
     constructor(
-       private productDB: ProductRepository,    
-       private httpService: HttpService,   
-      ) {} 
+       private productDB: ProductRepository,
+       private httpService: HttpService,
+      ) {}
 
 
     async getProducts(sort:number, field:string,limit:number,skip:number) : Promise<ProductPgSchema[]>{
@@ -67,25 +67,38 @@ export class ProductsService {
       } catch (e) {
         console.log(e);
         throw e;
-      } 
+      }
     }
 
     async getSilpoProducts (): Promise<Product[]>{
       try{
-        const response = await this.httpService.post(
-          process.env.SILPO_URL,{
-          query: query.query,
-          variables: query.variables,      
-        }).toPromise();
+          const form = new FormData();
+          form.append('query',query.query);
+          form.append('variables',query.variables);
+        // const response = await this.httpService.post(
+        //   process.env.SILPO_URL,{
+        //   query: query.query,
+        //   variables: query.variables,
+        // }).toPromise();
+
+          const response = await this.httpService.post(
+              process.env.SILPO_URL
+            ,form,
+              {
+                  headers: {
+                      'Content-Type': `multipart/form-data; boundary=${form._boundary}`
+                  }
+              }).toPromise();
         const products :ProductGetDto[] = response.data.data.offersSplited.products.items;
-        
+
         const mapProducts = products.map(item=>{
           let mapItem = {...item,price:0,oldPrice:0,discount:0 };
           mapItem.price = parseFloat(item.price);
           mapItem.oldPrice = parseFloat(item.oldPrice);
-          mapItem.discount = Number(((1-mapItem.price/mapItem.oldPrice)*100).toFixed(2));   
+          mapItem.discount = Number(((1-mapItem.price/mapItem.oldPrice)*100).toFixed(2));
           return mapItem;
-        })           
+        })
+
         return mapProducts;
       } catch (e) {
         console.log(e);

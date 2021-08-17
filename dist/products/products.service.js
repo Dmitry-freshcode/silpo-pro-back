@@ -14,6 +14,7 @@ const common_1 = require("@nestjs/common");
 const products_repository_1 = require("./products.repository");
 const silpo_query_1 = require("../shared/silpo_query");
 const common_2 = require("@nestjs/common");
+const FormData = require('form-data');
 let ProductsService = class ProductsService {
     constructor(productDB, httpService) {
         this.productDB = productDB;
@@ -36,9 +37,13 @@ let ProductsService = class ProductsService {
     }
     async getSilpoProducts() {
         try {
-            const response = await this.httpService.post(process.env.SILPO_URL, {
-                query: silpo_query_1.default.query,
-                variables: silpo_query_1.default.variables,
+            const form = new FormData();
+            form.append('query', silpo_query_1.default.query);
+            form.append('variables', silpo_query_1.default.variables);
+            const response = await this.httpService.post(process.env.SILPO_URL, form, {
+                headers: {
+                    'Content-Type': `multipart/form-data; boundary=${form._boundary}`
+                }
             }).toPromise();
             const products = response.data.data.offersSplited.products.items;
             const mapProducts = products.map(item => {
